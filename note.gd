@@ -6,6 +6,8 @@ const _log12base = log(12)
 @export var audiostream: AudioStream # the sample
 @export var base := 60 # what note the sample is, in MIDI
 @export var release := 0.22
+@export var root := 60 # the root of the chord, or my code's best guess for it at least.
+@export var intevalcolours: PackedColorArray
 
 @onready var asp: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var part: GPUParticles2D = $GPUParticles2D
@@ -29,7 +31,7 @@ func _ready() -> void:
 	asp.pitch_scale = pow(2.0, (note - base) / 12.0)
 	connect(&"note_off", _note_off)
 	connect(&"note_on",  _note_on)
-	print(asp.volume_linear)
+	#print(asp.volume_linear)
 
 func _note_on(_velocity: int):
 	#print("note on")
@@ -47,6 +49,9 @@ func _note_off():
 	#asp.playing = false
 	part.emitting = false
 	light.enabled = false
+
+func setroot(pitch: int):
+	light.color = intevalcolours[(note - pitch) % 12]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

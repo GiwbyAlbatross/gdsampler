@@ -24,6 +24,8 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="note" type="Node2D"]
 script = ExtResource("1_doocs")
+release = 0.11
+intevalcolours = PackedColorArray(1, 1, 1, 1, 0.633333, 0, 1, 1, 0, 0.316667, 1, 1, 0, 0.766667, 1, 1, 0, 1, 0.633333, 1, 1, 1, 0, 1, 0.712692, 1.2514e-06, 4.81307e-07, 1, 1, 0.433333, 0, 1, 0.324042, 0.744305, 0.769655, 1, 0.403729, 0.658119, 0.913072, 1, 0.880726, 0.708246, 0.723223, 1, 0.93441, 0.154561, 0.486312, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 attenuation = 0.0358969

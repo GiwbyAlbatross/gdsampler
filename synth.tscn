@@ -27,4 +27,4 @@ note_scene = ExtResource("2_2y8ch")
 audiostream = ExtResource("3_2hpo1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.847474, 0.847474, 0.847474, 1)
+color = Color(0.46229, 0.462291, 0.46229, 1)
